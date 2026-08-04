@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model attendance {
+  id       Int      @id @default(autoincrement())
+  internId Int
+  date     DateTime
+  inTime   String
+  outTime  String?
+  status   String   @default("Inside")
+  user     user     @relation(fields: [internId], references: [id], onDelete: NoAction, map: "Attendance_internId_fkey")
+
+  @@index([internId], map: "Attendance_internId_fkey")
+}
+
+model user {
+  id               Int           @id @default(autoincrement())
+  name             String
+  email            String        @unique(map: "User_email_key")
+  password         String?
+  doj              DateTime?
+  role             Int?
+  dept             String?
+  phone            String?
+  repMgr           String?
+  repMgrEmail      String? // ✅ Added field
+  status           String        @default("active")
+  createdAt        DateTime      @default(now())
+  resetToken       String?
+  resetTokenExpiry DateTime?
+  attendance       attendance[]
+  leaves           leave[]
+  leaveBalance     leaveBalance?
+}
+
+model leave {
+  id     Int @id @default(autoincrement())
+  userId Int
+
+  leaveType String
+
+  // for normal leave
+  fromDate DateTime?
+  toDate   DateTime?
+
+
+  fromHalfDay Boolean?   // ✅ add
+  fromHalfType String?   // ✅ add
+
+  toHalfDay Boolean?     // ✅ add
+  toHalfType String?     // ✅ add
+  
+
+  // for short leave
+  date      DateTime?
+  startTime String?
+  endTime   String?
+
+  reason String
+  status String @default("pending")
+
+  createdAt DateTime @default(now())
+
+  user user @relation(fields: [userId], references: [id])
+}
+
+model leaveBalance {
+  id     Int @id @default(autoincrement())
+  userId Int @unique
+
+  casual Float @default(1)
+  earned Float @default(0)
+  short  Float @default(2)
+
+  lastUpdatedMonth String?
+
+  user user @relation(fields: [userId], references: [id])
+}

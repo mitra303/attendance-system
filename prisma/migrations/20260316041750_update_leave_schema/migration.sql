@@ -1,0 +1,6 @@
+-- AlterTable
+ALTER TABLE `leave` ADD COLUMN `date` DATETIME(3) NULL,
+    ADD COLUMN `endTime` VARCHAR(191) NULL,
+    ADD COLUMN `startTime` VARCHAR(191) NULL,
+    MODIFY `fromDate` DATETIME(3) NULL,
+    MODIFY `toDate` DATETIME(3) NULL;
