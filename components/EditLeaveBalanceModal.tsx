@@ -29,9 +29,9 @@ export default function EditLeaveBalanceModal({ user, close, reload }: any) {
 
     return (
 
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
 
-            <div className="bg-white p-6 rounded-lg w-[420px] shadow-lg">
+            <div className="bg-white p-6 rounded-lg w-full max-w-105 shadow-lg">
 
                 {/* Employee Info */}
                 <div className="mb-4 border-b pb-3">

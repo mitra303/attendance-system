@@ -113,13 +113,13 @@ export default function AttendanceView() {
 
             <Sidebar />
 
-            <div className="flex-1 ml-64 p-8">
+            <div className="flex-1 min-w-0 ml-0 md:ml-64 p-4 md:p-8">
 
                 <Header />
 
                 {/* Calendar Card */}
 
-                <div className="bg-white rounded-2xl shadow-lg p-6 mt-6">
+                <div className="bg-white rounded-2xl shadow-lg p-3 md:p-6 mt-6">
 
                     {/* Month Navigation */}
 
@@ -147,7 +147,7 @@ export default function AttendanceView() {
 
                     {/* Week Header */}
 
-                    <div className="grid grid-cols-7 text-center font-semibold text-gray-500 mb-3">
+                    <div className="grid grid-cols-7 text-center font-semibold text-gray-500 mb-3 text-[10px] sm:text-sm">
                         <div>Sun</div>
                         <div>Mon</div>
                         <div>Tue</div>
@@ -159,7 +159,7 @@ export default function AttendanceView() {
 
                     {/* Calendar Grid */}
 
-                    <div className="grid grid-cols-7 gap-4">
+                    <div className="grid grid-cols-7 gap-1 md:gap-4">
 
                         {/* Empty cells before first day */}
 
@@ -245,7 +245,7 @@ export default function AttendanceView() {
                             return (
                                 <div
                                     key={day}
-                                    className={`relative rounded-2xl p-3 h-28 border shadow-sm text-sm transition
+                                    className={`relative rounded-lg md:rounded-2xl p-1 md:p-3 h-16 sm:h-20 md:h-28 border shadow-sm text-[9px] sm:text-xs md:text-sm overflow-hidden transition
 
                                     ${holiday
                                             ? "bg-yellow-50 border-yellow-300"
@@ -263,10 +263,10 @@ export default function AttendanceView() {
 
                                     {/* Day Number */}
 
-                                    <div className="font-bold text-gray-700">{day}</div>
+                                    <div className="font-bold text-gray-700 text-[11px] sm:text-sm">{day}</div>
 
                                     {hours && (
-                                        <div className="absolute top-2 right-2 text-[11px] px-2 py-1 rounded-md bg-amber-100 text-amber-800 shadow">
+                                        <div className="absolute top-0.5 right-0.5 md:top-2 md:right-2 text-[8px] sm:text-[11px] px-1 py-0.5 md:px-2 md:py-1 rounded-md bg-amber-100 text-amber-800 shadow">
                                             ⏱ {hours}
                                         </div>
                                     )}
@@ -274,42 +274,42 @@ export default function AttendanceView() {
                                     {/* Holiday */}
 
                                     {holiday && (
-                                        <div className="flex items-center gap-1 text-yellow-700 text-xs mt-1 font-semibold">
-                                            <PartyPopper size={14} />
-                                            {holiday.reason}
+                                        <div className="flex items-center gap-1 text-yellow-700 text-[8px] sm:text-xs mt-1 font-semibold truncate">
+                                            <PartyPopper size={14} className="hidden sm:block shrink-0" />
+                                            <span className="truncate">{holiday.reason}</span>
                                         </div>
                                      )}
 
                                      {/* Leave */}
                                      {leaveRecord && (
-                                            <div className="flex items-center gap-1 text-blue-700 text-xs mt-1 font-semibold">
-                                                🏖 On Leave
+                                            <div className="flex items-center gap-1 text-blue-700 text-[8px] sm:text-xs mt-1 font-semibold truncate">
+                                                🏖 <span className="hidden sm:inline">On Leave</span>
                                             </div>
                                     )}
 
                                     {/* Sunday */}
 
                                     {isWeekend && !holiday && !leaveRecord && (
-                                        <div className="flex items-center gap-1 text-rose-500 text-xs mt-1 font-medium">
-                                            <Flower size={14} />
-                                            Sunday Off
+                                        <div className="flex items-center gap-1 text-rose-500 text-[8px] sm:text-xs mt-1 font-medium truncate">
+                                            <Flower size={14} className="hidden sm:block shrink-0" />
+                                            <span className="truncate">Off</span>
                                         </div>
                                     )}
 
                                     {/* Attendance */}
 
                                     {record && !leaveRecord && (
-                                        <div className="text-xs mt-1">
+                                        <div className="text-[8px] sm:text-xs mt-1 leading-tight">
 
                                             <div className="flex items-center gap-1 text-green-700 font-semibold">
-                                                <CheckCircle2 size={14} />
-                                                Present
+                                                <CheckCircle2 size={14} className="hidden sm:block shrink-0" />
+                                                <span className="hidden sm:inline">Present</span>
                                             </div>
 
-                                            <div>In: {record.inTime}</div>
+                                            <div className="truncate">In: {record.inTime}</div>
 
                                             {record.outTime && (
-                                                <div>Out: {record.outTime}</div>
+                                                <div className="hidden sm:block truncate">Out: {record.outTime}</div>
                                             )}
 
                                         </div>
@@ -318,8 +318,8 @@ export default function AttendanceView() {
 
                                     {/* Absent */}
                                         {!record && !leaveRecord && !isWeekend && !holiday && isPastDate && (
-                                            <div className="text-xs mt-1 text-red-600 font-semibold">
-                                                ❌ Absent
+                                            <div className="text-[8px] sm:text-xs mt-1 text-red-600 font-semibold truncate">
+                                                ❌ <span className="hidden sm:inline">Absent</span>
                                             </div>
                                         )}
 

@@ -36,13 +36,13 @@ export default function LeaveRequestPage() {
 
             <Sidebar />
 
-            <div className="flex-1 p-8 ml-64">
+            <div className="flex-1 min-w-0 p-4 md:p-8 ml-0 md:ml-64">
 
                 <Header />
 
-                <div className="bg-white p-6 rounded shadow">
+                <div className="bg-white p-4 md:p-6 rounded shadow mt-4">
 
-                    <div className="flex justify-between mb-4">
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3 mb-4">
 
                         <h2 className="text-lg font-semibold">
                             My Leave Requests
@@ -53,12 +53,14 @@ export default function LeaveRequestPage() {
                             placeholder="Search leave..."
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="border px-3 py-2 rounded w-60"
+                            className="border px-3 py-2 rounded w-full md:w-60"
                         />
 
                     </div>
 
-                    <table className="w-full border">
+                    <div className="overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0">
+
+                    <table className="w-full border min-w-160">
 
                         <thead className="bg-gray-200">
                             <tr>
@@ -143,9 +145,11 @@ export default function LeaveRequestPage() {
 
                     </table>
 
+                    </div>
+
                     {/* PAGINATION */}
 
-                    <div className="flex justify-center gap-4 mt-6">
+                    <div className="flex flex-wrap justify-center gap-4 mt-6">
 
                         <button
                             onClick={() => setPage(page - 1)}

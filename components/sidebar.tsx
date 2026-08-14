@@ -32,12 +32,14 @@ export default function Sidebar() {
   return (
     <>
       {/* MOBILE MENU BUTTON */}
-      <button
-        onClick={() => setOpen(true)}
-        className="fixed top-4 left-4 z-50 md:hidden bg-white shadow p-2 rounded-lg"
-      >
-        <Menu size={22} />
-      </button>
+      {!open && (
+        <button
+          onClick={() => setOpen(true)}
+          className="fixed top-4 left-4 z-50 md:hidden bg-white shadow p-2 rounded-lg"
+        >
+          <Menu size={22} />
+        </button>
+      )}
 
       {/* SIDEBAR */}
       <div

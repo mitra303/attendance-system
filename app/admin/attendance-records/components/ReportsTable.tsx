@@ -11,7 +11,9 @@ export default function ReportsTable({
 
     <div>
 
-      <table className="w-full text-left">
+      <div className="overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0">
+
+      <table className="w-full text-left min-w-175">
 
         <thead className="border-b">
 
@@ -97,9 +99,11 @@ export default function ReportsTable({
 
       </table>
 
+      </div>
+
       {/* Pagination */}
 
-      <div className="flex justify-center gap-3 mt-5">
+      <div className="flex flex-wrap justify-center gap-3 mt-5">
 
         <button
           disabled={page===1}

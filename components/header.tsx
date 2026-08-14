@@ -37,25 +37,25 @@ export default function Header() {
 
   return (
 
-    <div className="flex justify-between items-center p-4 bg-gray-100">
+    <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3 p-4 pl-16 md:pl-4 bg-gray-100">
 
-      <h1 className="text-2xl font-semibold">
+      <h1 className="text-lg md:text-2xl font-semibold">
         Organization Attendance System
       </h1>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 md:gap-4">
 
-        <span className="text-gray-600">
+        <span className="text-gray-600 text-sm md:text-base truncate">
           Welcome {name}
         </span>
 
-        <div className="w-8 h-8 bg-yellow-600 text-white rounded-full flex items-center justify-center">
+        <div className="w-8 h-8 shrink-0 bg-yellow-600 text-white rounded-full flex items-center justify-center">
           {name?.charAt(0)}
         </div>
 
         <button
           onClick={handleLogout}
-          className="bg-red-500 text-white px-4 py-1 rounded-lg hover:bg-red-600"
+          className="bg-red-500 text-white px-4 py-1 rounded-lg hover:bg-red-600 whitespace-nowrap"
         >
           Logout
         </button>

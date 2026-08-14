@@ -129,21 +129,21 @@ export default function Leave() {
 
             <Sidebar />
 
-            <div className="flex-1 p-8 ml-64">
+            <div className="flex-1 min-w-0 p-4 md:p-8 ml-0 md:ml-64">
 
                 <Header />
 
-                <div className="grid grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8">
 
                     {/* LEFT SIDE FORM */}
 
-                    <div className="bg-white rounded-xl shadow-lg border-t-4 border-yellow-500 p-6">
+                    <div className="bg-white rounded-xl shadow-lg border-t-4 border-yellow-500 p-4 md:p-6">
 
                         <h2 className="text-2xl font-semibold mb-6">
                             Apply Leave
                         </h2>
 
-                        <form onSubmit={submitLeave} className="space-y-4">
+                        <form onSubmit={submitLeave} className="space-y-4 [&_label]:font-semibold [&_label]:text-gray-800 [&_input]:border-gray-400 [&_select]:border-gray-400 [&_textarea]:border-gray-400 [&_input]:text-gray-900 [&_select]:text-gray-900 [&_textarea]:text-gray-900">
 
                             {/* Leave Type */}
 
@@ -350,7 +350,7 @@ export default function Leave() {
                             My Leave Balance
                         </h2>
 
-                        <table className="w-full text-sm">
+                        <table className="w-full text-sm text-gray-900">
 
                             <thead className="bg-teal-700 text-white">
                                 <tr>
@@ -362,20 +362,20 @@ export default function Leave() {
                             <tbody>
 
                                 <tr className="border-b">
-                                    <td className="p-2">🌴 Casual Leave</td>
+                                    <td className="p-2 font-medium">🌴 Casual Leave</td>
                                     <td className="text-center font-semibold">{balance.casual}</td>
 
                                 </tr>
 
 
                                 <tr className="border-b">
-                                    <td className="p-2">💰 Earned</td>
+                                    <td className="p-2 font-medium">💰 Earned</td>
                                     <td className="text-center font-semibold">{balance.earned}</td>
 
                                 </tr>
 
                                 <tr>
-                                    <td className="p-2">⏱ Short</td>
+                                    <td className="p-2 font-medium">⏱ Short</td>
                                     <td className="text-center font-semibold">{balance.short}</td>
                                 </tr>
 
@@ -393,14 +393,16 @@ export default function Leave() {
                                 Earned Leave Utilization
                             </p>
 
-                            <div className="w-full bg-gray-200 rounded-full h-4">
+                            <div className="w-full bg-gray-200 rounded-full h-4 relative overflow-hidden">
 
                                 <div
-                                    className="bg-teal-700 h-4 rounded-full text-xs text-white text-center"
+                                    className="bg-teal-700 h-4 rounded-full"
                                     style={{ width: `${Math.min(balance.earnedUtilization, 100)}%` }}
-                                >
+                                />
+
+                                <span className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold text-gray-800">
                                     {balance.earnedUtilization}%
-                                </div>
+                                </span>
 
                             </div>
 

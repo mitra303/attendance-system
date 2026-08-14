@@ -41,7 +41,7 @@ export default function LeaveBalanceTable() {
 
   return (
 
-   <div className="bg-blue-50 border border-blue-100 rounded-xl shadow p-4">
+   <div className="bg-blue-50 border border-blue-100 rounded-xl shadow p-3 md:p-4">
 
       {/* Search */}
       <div className="flex justify-between mb-4">
@@ -51,12 +51,14 @@ export default function LeaveBalanceTable() {
           placeholder="Search employee..."
           value={search}
           onChange={(e)=>setSearch(e.target.value)}
-          className="border px-3 py-2 rounded w-64"
+          className="border px-3 py-2 rounded w-full sm:w-64"
         />
 
       </div>
 
-      <table className="w-full">
+      <div className="overflow-x-auto -mx-3 md:mx-0 px-3 md:px-0">
+
+      <table className="w-full min-w-140">
 
         <thead className="bg-gray-50 border-b">
 
@@ -124,9 +126,11 @@ export default function LeaveBalanceTable() {
 
       </table>
 
+      </div>
+
       {/* Pagination */}
 
-<div className="flex justify-center mt-6 gap-2">
+<div className="flex flex-wrap justify-center mt-6 gap-2">
 
 {Array.from({ length: totalPages }, (_, i) => (
 

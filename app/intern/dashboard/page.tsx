@@ -12,11 +12,11 @@ export default function Dashboard() {
 
       <Sidebar />
 
-      <div className="flex-1 p-8 ml-64">
+      <div className="flex-1 min-w-0 p-4 md:p-8 ml-0 md:ml-64">
 
         <Header />
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
           <AttendanceCard />
           <CheckinCard />

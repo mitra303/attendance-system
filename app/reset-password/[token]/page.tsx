@@ -51,13 +51,13 @@ export default function ResetPassword() {
 
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-700 to-indigo-900 p-6">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-700 to-indigo-900 p-4 sm:p-6">
 
-      <div className="flex w-[900px] bg-white rounded-3xl overflow-hidden shadow-2xl">
+      <div className="flex flex-col md:flex-row w-full max-w-225 bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl">
 
         {/* LEFT SIDE */}
 
-        <div className="w-1/2 bg-gradient-to-br from-purple-500 to-indigo-600 text-white p-12 flex flex-col justify-center items-center text-center">
+        <div className="hidden md:flex w-1/2 bg-gradient-to-br from-purple-500 to-indigo-600 text-white p-12 flex-col justify-center items-center text-center">
 
           <img
             src="/Online-report-amico.png"
@@ -74,16 +74,30 @@ export default function ResetPassword() {
 
         </div>
 
+        {/* MOBILE HEADER */}
+
+        <div className="md:hidden bg-gradient-to-br from-purple-500 to-indigo-600 text-white px-6 py-8 text-center">
+
+          <h1 className="text-xl font-semibold">
+            Create new password
+          </h1>
+
+          <p className="text-xs mt-2 opacity-90">
+            Enter a strong password to secure your account.
+          </p>
+
+        </div>
+
 
         {/* RIGHT SIDE */}
 
-        <div className="w-1/2 p-12 flex flex-col justify-center">
+        <div className="w-full md:w-1/2 p-6 sm:p-8 md:p-12 flex flex-col justify-center">
 
           <div className="bg-purple-600 text-white px-6 py-2 rounded-full w-fit mb-6">
             Reset Password
           </div>
 
-          <h2 className="text-2xl font-semibold mb-6">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-6">
             Set your new password
           </h2>
 
