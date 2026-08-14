@@ -108,20 +108,19 @@ export default function ReportsTable({
         <button
           disabled={page===1}
           onClick={()=>setPage(page-1)}
-          className="border px-3 py-1 rounded"
-          
+          className="border px-3 py-1 rounded disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Previous
         </button>
 
-        <span className="px-3 py-1 bg-blue-600 text-white rounded">
-          {page}
+        <span className="px-3 py-1">
+          Page {page} of {totalPages || 1}
         </span>
 
         <button
-          disabled={page===totalPages}
+          disabled={page===totalPages || totalPages===0}
           onClick={()=>setPage(page+1)}
-          className="border px-3 py-1 rounded"
+          className="border px-3 py-1 rounded disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Next
         </button>
