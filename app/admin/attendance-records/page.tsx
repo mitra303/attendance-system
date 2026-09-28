@@ -255,11 +255,11 @@ export default function ReportsPage() {
 
       <Sidebar />
 
-      <div className="flex-1 min-w-0 ml-0 md:ml-64 p-4 md:p-8">
+      <div className="flex-1 min-w-0 ml-0 md:ml-64 p-4 sm:p-6 md:p-8">
 
         <Header />
 
-        <div className="bg-white shadow rounded-xl p-4 md:p-6 mt-4 md:mt-6">
+        <div className="bg-white shadow rounded-xl p-4 sm:p-5 md:p-6 mt-4 md:mt-6">
 
           <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
 

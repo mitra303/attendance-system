@@ -113,7 +113,7 @@ export default function AttendanceView() {
 
             <Sidebar />
 
-            <div className="flex-1 min-w-0 ml-0 md:ml-64 p-4 md:p-8">
+            <div className="flex-1 min-w-0 ml-0 md:ml-64 p-4 sm:p-6 md:p-8">
 
                 <Header />
 

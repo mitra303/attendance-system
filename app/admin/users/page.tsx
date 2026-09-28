@@ -33,11 +33,11 @@ export default function UsersPage() {
 
       <Sidebar/>
 
-      <div className="flex-1 min-w-0 p-4 md:p-8 ml-0 md:ml-64">
+      <div className="flex-1 min-w-0 p-4 sm:p-6 md:p-8 ml-0 md:ml-64">
 
         <Header/>
 
-        <div className="bg-white rounded-xl shadow-md p-4 md:p-6 mt-4 md:mt-6">
+        <div className="bg-white rounded-xl shadow-md p-4 sm:p-5 md:p-6 mt-4 md:mt-6">
 
           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-5">
 

@@ -129,7 +129,7 @@ export default function Leave() {
 
             <Sidebar />
 
-            <div className="flex-1 min-w-0 p-4 md:p-8 ml-0 md:ml-64">
+            <div className="flex-1 min-w-0 p-4 sm:p-6 md:p-8 ml-0 md:ml-64">
 
                 <Header />
 
@@ -137,7 +137,7 @@ export default function Leave() {
 
                     {/* LEFT SIDE FORM */}
 
-                    <div className="bg-white rounded-xl shadow-lg border-t-4 border-yellow-500 p-4 md:p-6">
+                    <div className="bg-white rounded-xl shadow-lg border-t-4 border-yellow-500 p-4 sm:p-5 md:p-6">
 
                         <h2 className="text-2xl font-semibold mb-6">
                             Apply Leave

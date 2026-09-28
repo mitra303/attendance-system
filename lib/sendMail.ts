@@ -59,7 +59,7 @@ export async function sendCredentials(email: string, password: string) {
             </p>
 
             <div style="text-align:center;margin-top:30px">
-              <a href="http://115.241.45.146:8015/login"
+              <a href="http://14.99.235.114:8015/login"
               style="background:#4f46e5;color:white;padding:12px 25px;
               text-decoration:none;border-radius:6px;font-weight:bold">
                 Login to Account

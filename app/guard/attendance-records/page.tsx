@@ -99,24 +99,24 @@ export default function ReportsPage() {
 
       <Sidebar />
 
-      <div className="flex-1 md:ml-64 p-8">
+      <div className="flex-1 min-w-0 md:ml-64 p-4 sm:p-6 md:p-8">
 
         <Header />
 
-        <div className="bg-white shadow rounded-xl p-6 mt-6">
+        <div className="bg-white shadow rounded-xl p-4 sm:p-5 md:p-6 mt-4 sm:mt-5 md:mt-6">
 
-          <div className="flex justify-between mb-5">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-3 mb-5">
 
             <input
               placeholder="Search intern..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="border px-3 py-2 rounded-md w-64"
+              className="border px-3 py-2 rounded-md w-full sm:w-64"
             />
 
             <button
               onClick={() => setOpen(true)}
-              className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700"
+              className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 whitespace-nowrap"
             >
               Download Report
             </button>
@@ -124,11 +124,11 @@ export default function ReportsPage() {
 
             {open && (
 
-              <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+              <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
 
-                <div className="bg-white rounded-xl shadow-lg p-8 w-[520px]">
+                <div className="bg-white rounded-xl shadow-lg p-4 sm:p-8 w-full max-w-130 max-h-[90vh] overflow-y-auto">
 
-                  <h2 className="text-xl font-semibold mb-6">
+                  <h2 className="text-lg sm:text-xl font-semibold mb-6">
                     Download Attendance Report
                   </h2>
 

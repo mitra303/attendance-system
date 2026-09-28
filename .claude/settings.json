@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -m 5 -w \"14.99 -> HTTP %{http_code}\\\\n\" http://14.99.235.114:8016/accounts/auth-subapp/)",
+      "Bash(pm2 stop *)"
+    ]
+  }
+}

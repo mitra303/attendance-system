@@ -37,9 +37,9 @@ export default function Header() {
 
   return (
 
-    <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3 p-4 pl-16 md:pl-4 bg-gray-100">
+    <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between md:items-center gap-3 p-4 pl-16 md:pl-4 bg-gray-100">
 
-      <h1 className="text-lg md:text-2xl font-semibold">
+      <h1 className="text-lg lg:text-2xl font-semibold">
         Organization Attendance System
       </h1>
 

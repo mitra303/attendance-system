@@ -139,7 +139,7 @@ const loadAttendance = async () => {
 
       <Sidebar />
 
-      <div className="flex-1 p-6 bg-gray-50 md:ml-64">
+      <div className="flex-1 min-w-0 p-4 sm:p-5 md:p-6 bg-gray-50 md:ml-64">
 
         <Header />
 
@@ -182,7 +182,7 @@ const loadAttendance = async () => {
         )}
 
         {/* Actions */}
-        <div className="grid grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
 
           <button
             onClick={handleCheckIn}
@@ -225,9 +225,11 @@ const loadAttendance = async () => {
 
 
         {/* Today Attendance */}
-        <div className="bg-white shadow rounded-xl p-6">
+        <div className="bg-white shadow rounded-xl p-4 sm:p-5 md:p-6">
 
-          <table className="w-full text-left">
+          <div className="overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0">
+
+          <table className="w-full text-left min-w-125">
 
             <thead className="border-b">
               <tr>
@@ -273,25 +275,27 @@ const loadAttendance = async () => {
 
           </table>
 
+          </div>
+
         </div>
-        <div className="flex justify-center gap-3 mt-4">
+        <div className="flex flex-wrap justify-center gap-3 mt-4">
 
           <button
             disabled={page === 1}
             onClick={() => setPage(page - 1)}
-            className="border px-3 py-1 rounded"
+            className="border px-3 py-1 rounded disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Previous
           </button>
 
-          <span className="px-3 py-1 bg-blue-600 text-white rounded">
-            {page}
+          <span className="px-3 py-1">
+            Page {page} of {totalPages || 1}
           </span>
 
           <button
-            disabled={page === totalPages}
+            disabled={page === totalPages || totalPages === 0}
             onClick={() => setPage(page + 1)}
-            className="border px-3 py-1 rounded"
+            className="border px-3 py-1 rounded disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Next
           </button>

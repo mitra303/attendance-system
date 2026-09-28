@@ -3,7 +3,7 @@ import { NextResponse } from "next/server"
 import jwt from "jsonwebtoken"
 import bcrypt from "bcryptjs"
 
-const SSO_AUTH_API_URL = process.env.SSO_AUTH_API_URL || "http://115.241.45.146:8016/accounts/auth-subapp/"
+const SSO_AUTH_API_URL = process.env.SSO_AUTH_API_URL || "http://14.99.235.114:8016/accounts/auth-subapp/"
 const SSO_APP_NAME = process.env.SSO_APP_NAME || "Attendance-System"
 const DEFAULT_PASSWORD = "Employee@1234"
 

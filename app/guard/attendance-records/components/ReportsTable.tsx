@@ -9,7 +9,9 @@ export default function ReportsTable({
 
     <div>
 
-      <table className="w-full text-left">
+      <div className="overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0">
+
+      <table className="w-full text-left min-w-150">
 
         <thead className="border-b">
 
@@ -78,26 +80,28 @@ export default function ReportsTable({
 
       </table>
 
+      </div>
+
       {/* Pagination */}
 
-      <div className="flex justify-center gap-3 mt-5">
+      <div className="flex flex-wrap justify-center gap-3 mt-5">
 
         <button
           disabled={page === 1}
           onClick={() => setPage(page - 1)}
-          className="border px-3 py-1 rounded"
+          className="border px-3 py-1 rounded disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Previous
         </button>
 
-        <span className="px-3 py-1 bg-blue-600 text-white rounded">
-          {page}
+        <span className="px-3 py-1">
+          Page {page} of {totalPages || 1}
         </span>
 
         <button
-          disabled={page === totalPages}
+          disabled={page === totalPages || totalPages === 0}
           onClick={() => setPage(page + 1)}
-          className="border px-3 py-1 rounded"
+          className="border px-3 py-1 rounded disabled:opacity-40 disabled:cursor-not-allowed"
         >
           Next
         </button>

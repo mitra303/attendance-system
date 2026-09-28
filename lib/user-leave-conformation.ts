@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
     }
 })
 
-const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://115.241.45.146:8015/login"
+const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://14.99.235.114:8015/login"
 
 export async function sendLeaveApprovedEmail(
     email: string,

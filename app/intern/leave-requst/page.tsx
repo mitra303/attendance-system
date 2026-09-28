@@ -36,11 +36,11 @@ export default function LeaveRequestPage() {
 
             <Sidebar />
 
-            <div className="flex-1 min-w-0 p-4 md:p-8 ml-0 md:ml-64">
+            <div className="flex-1 min-w-0 p-4 sm:p-6 md:p-8 ml-0 md:ml-64">
 
                 <Header />
 
-                <div className="bg-white p-4 md:p-6 rounded shadow mt-4">
+                <div className="bg-white p-4 sm:p-5 md:p-6 rounded shadow mt-4">
 
                     <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3 mb-4">
 
