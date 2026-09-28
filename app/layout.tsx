@@ -21,7 +21,7 @@ export const metadata = {
   },
   description: "Weekly Safety Inspection System",
   icons: {
-    icon: "/mipl_icon.png",
+    icon: "/logo1.ico",
   },
 };
 
